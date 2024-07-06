@@ -1,5 +1,5 @@
 # Restaurant Orders Analysis
-A restaurant released a new menu in the starting of year. Now they want to analyze the order data to identify the most and least popular menu items and which menu items are doing well.
+A restaurant released a new menu in the starting of year, now they want to analyze the order data to identify the most and least popular menu items and which menu items are doing well.
 
 Tables : menu_items, order_details
 
