@@ -1,12 +1,27 @@
 # Restaurant Orders Analysis SQL Project
-A restaurant released a new menu in the starting of year, now they want to analyze the order data to identify the most and least popular menu items and which menu items are doing well.
+In this project, we explore a dataset of restaurant orders to derive meaningful insights. A restaurant released a new menu in the starting of year, now they want to analyze the order data to understand sales trends, customer preferences, the most and least popular menu items, menu items which are doing well and more.
 
-Tables : menu_items, order_details
+To help extract meaningful insights from their restaurant orders dataset, I will utilize SQL for data extraction and analysis. By performing a series of SQL queries, I will uncover key metrics and trends. This structured analysis will provide actionable insights to refine their menu, optimize inventory, and enhance overall customer satisfaction.
 
 # Objectives 
 - Explore the menu_items table to get an idea what is on the new menu.
 - Explore the order_details table to get an idea of the data that has been collected.
 - Use both tables to understend how customers are reacting to the new menu.
+
+# Database Schema
+The database consists of the following tables:
+1. menu_items
+- menu_item_id:	Unique ID of a menu item
+- item_name:	Name of a menu item
+- category:	Category or type of cuisine of the menu item
+- price:	Price of the menu item (US Dollars $)
+
+2. order_details
+- order_details_id:	Unique ID of an item in an order
+- order_id:	ID of an order
+- order_date:	Date an order was put in (YYYY-MM-DD)
+- order_time:	Time an order was put in (HH:MM:SS)
+- item_id:	Matches the menu_item_id in the menu_items table
 
 # menu_items table analysis
 - View the menu_items table and write a query to find the number of items on the menu.<br/>
@@ -119,6 +134,8 @@ SELECT * FROM order_details
 LEFT JOIN menu_items
 ON menu_items.menu_item_id = order_details.item_id;
 ```
+![20](https://github.com/shas87/sqlProject/assets/139848347/e2ff312e-4e09-4f49-83b4-27ec3abbdec5)
+
 - What were the least and most ordered items? What categories were they in?
 ```
 SELECT item_name, category, COUNT(*) AS num FROM order_details 
@@ -127,6 +144,7 @@ ON menu_items.menu_item_id = order_details.item_id
 GROUP BY item_name, category
 ORDER BY num;
 ```
+![21](https://github.com/shas87/sqlProject/assets/139848347/a6f07a16-3914-4887-bf7e-eb89dd53cd44)
 
 - What were the top 5 orders that spent the most money?
 ```
@@ -137,6 +155,7 @@ ON menu_items.menu_item_id = order_details.item_id
 GROUP BY order_id
 ORDER BY order_wise_spend DESC LIMIT 5;
 ```
+![22](https://github.com/shas87/sqlProject/assets/139848347/e0a4e400-4471-4094-91df-e82518c78ad4)
 
 - View the details of the highest spend order. Which specific items were purchased?
 ```
@@ -146,6 +165,7 @@ ON menu_items.menu_item_id = order_details.item_id
 WHERE order_id = 440
 GROUP BY category;
 ```
+![23](https://github.com/shas87/sqlProject/assets/139848347/86f8426a-9137-4e72-806b-78593cff1b37)
 
 - View the details of the top 5 highest spend orders
 ```
@@ -155,3 +175,10 @@ ON menu_items.menu_item_id = order_details.item_id
 WHERE order_id IN(440, 2075, 1957, 330, 2675)
 GROUP BY order_id, category;
 ```
+![24](https://github.com/shas87/sqlProject/assets/139848347/7a50b9bb-7b90-478f-a412-1554c4606006)
+
+# Insights
+- Hamburger is the most ordered item from the restaraunt menu.
+- Chicken Tacos is the least ordered item from the restaraunt menu.
+- Menu Items from the Italian category are the most in demand, among the individuals who are spending higher.
+  
