@@ -6,7 +6,7 @@ To help extract meaningful insights from their restaurant orders dataset, I will
 # Objectives 
 - Explore the menu_items table to get an idea what is on the new menu.
 - Explore the order_details table to get an idea of the data that has been collected.
-- Use both tables to understend how customers are reacting to the new menu.
+- Use both tables to understand how customers are reacting to the new menu.
 
 # Database Schema
 The database consists of the following tables:
