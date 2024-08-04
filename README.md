@@ -1,5 +1,5 @@
 # Restaurant Orders Analysis SQL Project
-In this project, we explore a dataset of restaurant orders to derive meaningful insights. A restaurant released a new menu in the starting of year, now they want to analyze the order data to understand sales trends, customer preferences, the most and least popular menu items, menu items which are doing well and more.
+A restaurant released a new menu in the starting of year, now they want to analyze the order data to understand sales trends, customer preferences, the most and least popular menu items, menu items which are doing well and more.
 
 To help extract meaningful insights from their restaurant orders dataset, I will utilize SQL for data extraction and analysis. By performing a series of SQL queries, I will uncover key metrics and trends. This structured analysis will provide actionable insights to refine their menu, optimize inventory, and enhance overall customer satisfaction.
 
